@@ -60,9 +60,9 @@ let createHueRequest = (customerName, customerId, message, current_location) => 
         let c = nforce.createSObject('Hue_Message__c');
         c.set('first_name__c', `Contact ${customerName} (Facebook Customer)`);
 		c.set('last_name__c', `Contact ${customerName} (Facebook Customer)`);
-        c.set('description', "Facebook id: " + customerId);
-        c.set('origin', 'Facebook Bot');
-        c.set('message', message);        
+        c.set('Description__c', "Facebook id: " + customerId);
+        c.set('Origin__c', 'Facebook Bot');
+        c.set('Message__c', message);        
 		c.set('GPS_Location__c', current_location);
 
         org.insert({sobject: c}, err => {
