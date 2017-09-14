@@ -18,17 +18,17 @@ exports.formatLights = lights => {
                     {
                         "type": "postback",
                         "title": "Turn Off",
-                        "payload": "alloff," + property.getId()
+                        "payload": "alloff," + lamp.getId()
                     },
                     {
                         "type": "postback",
                         "title": "Turn Red",
-                        "payload": "allred," + property.getId()
+                        "payload": "allred," + lamp.getId()
                     },
 					{
                         "type": "postback",
                         "title": "Turn Random",
-                        "payload": "random," + property.getId()
+                        "payload": "random," + lamp.getId()
                     }
                 ]
             })
