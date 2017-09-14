@@ -1,0 +1,19 @@
+findLights (.*) lights (.*) 
+findLights (.*) switch (.*) on (.*) 
+findLights (.*) switch (.*) off (.*) 
+findLights (.*) switch (.*) red (.*) 
+findLights (.*) switch (.*) random (.*) 
+findLights (.*) turn (.*) on (.*) 
+findLights (.*) turn (.*) off (.*) 
+findLights (.*) turn (.*) red (.*) 
+findLights (.*) turn (.*) random (.*) 
+findLights off (.*) random (.*) red (.*)
+findLights (.*) turn (.*) on (.*) off (.*) random (.*) red (.*)
+findLights looking for lights
+findLights turn on
+findLights turn off
+findLights switch (.*)
+findLights turn (.*)
+hi hi
+hello hello
+help help
