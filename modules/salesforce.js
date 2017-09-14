@@ -44,7 +44,8 @@ let findLights = (params) => {
                 LIMIT 5`;
         org.query({query: q}, (err, resp) => {
             if (err) {
-                reject("An error as occurred");
+                //reject("An error as occurred");
+		    resolve(err);
             } else {
                 resolve(resp.records);
             }
