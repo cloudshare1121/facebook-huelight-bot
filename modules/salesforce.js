@@ -39,7 +39,7 @@ let findLights = (params) => {
         let q = `SELECT id,
                     title__c,                    
                     picture__c
-                FROM property__c
+                FROM Hue_Light__c
                 ${where}
                 LIMIT 5`;
         org.query({query: q}, (err, resp) => {
@@ -52,7 +52,7 @@ let findLights = (params) => {
     });
 
 };
-
+ 
 
 let createHueRequest = (customerName, customerId, message, current_location) => {
 
