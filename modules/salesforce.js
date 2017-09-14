@@ -42,10 +42,11 @@ let findLights = (params) => {
                 FROM Hue_Light__c
                 ${where}
                 LIMIT 5`;
+	    console.log('q: '+q);
         org.query({query: q}, (err, resp) => {
             if (err) {
-                //reject("An error as occurred");
-		    resolve(err);
+                reject("An error as occurred");
+		    //resolve(err);
             } else {
                 resolve(resp.records);
             }
