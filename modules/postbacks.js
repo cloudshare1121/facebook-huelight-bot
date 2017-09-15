@@ -6,7 +6,7 @@ let salesforce = require('./salesforce'),
 
 exports.allon = (sender, values) => {
     let hueId = values[1];
-    console.log('DEBUG: values: '+values[2]);
+    console.log('DEBUG: values: '+values[0]);
      console.log('DEBUG: values.length: '+values.length);
     console.log('DEBUG: hueid: '+hueId);
     messenger.getUserInfo(sender).then(response => {
