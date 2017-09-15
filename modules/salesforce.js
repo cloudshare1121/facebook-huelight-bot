@@ -57,16 +57,16 @@ let findLights = (params) => {
 };
  
 
-let createHueRequest = (customerName, customerId, message, current_location) => {
+let createHueRequest = (firstName, lastName, customerId, message, current_location) => {
 
     return new Promise((resolve, reject) => {
         let c = nforce.createSObject('Hue_Message__c');
-        c.set('first_name__c', `Contact ${customerName} (Facebook Customer)`);
-		c.set('last_name__c', `Contact ${customerName} (Facebook Customer)`);
+        c.set('first_name__c', firstName);
+	c.set('last_name__c', lastName);
         c.set('Description__c', "Facebook id: " + customerId);
-        c.set('Origin__c', 'Facebook Bot');
+        c.set('Device_Source__c', 'Facebook Bot: '+customerId);
         c.set('Message__c', message);        
-		c.set('GPS_Location__c', current_location);
+	c.set('GPS_Location__c', 'Brussels');
 
         org.insert({sobject: c}, err => {
             if (err) {
