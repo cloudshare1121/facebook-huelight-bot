@@ -1,4 +1,7 @@
 searchLights (.*) lights (.*)
+searchLights (.*) lights
+searchLights (.*) (.*) (.*)
+searchLights (.*) (.*) (.*) (.*) 
 searchLights switch on lights
 searchLights switch off lights
 hi hi
