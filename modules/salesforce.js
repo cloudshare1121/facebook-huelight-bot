@@ -57,7 +57,7 @@ let findLights = (params) => {
 };
  
 
-let createHueRequest = (firstName, lastName, customerId, message, current_location) => {
+let createHueRequest = (firstName, lastName, customerId, message) => {
 
     return new Promise((resolve, reject) => {
         let c = nforce.createSObject('Hue_Message__c');
