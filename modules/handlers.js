@@ -25,5 +25,5 @@ exports.hello = (sender) => {
 };
 
 exports.help = (sender) => {
-    messenger.send({text: `You can ask me questions like "Switch on my lights", "Switch off", "turn my lights red", "random color"`}, sender);
+    messenger.send({text: `You can ask me questions like "Switch on my lights", "Switch off" `}, sender);
 };
