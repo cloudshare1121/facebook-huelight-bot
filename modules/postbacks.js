@@ -7,10 +7,11 @@ let salesforce = require('./salesforce'),
 exports.allon = (sender, values) => {
     let hueId = values[1];
     let hueMessage = values[0];
-    console.log('DEBUG: response: '+response.length);    
+     
+    messenger.getUserInfo(sender).then(response => { 
+        console.log('DEBUG: response: '+response.length);    
     console.log('DEBUG: response0: '+response[0]);    
-    console.log('DEBUG: response1: '+response[1]);    
-    messenger.getUserInfo(sender).then(response => {       
+    console.log('DEBUG: response1: '+response[1]);   
         salesforce.createHueRequest(response.first_name + " " + response.first_name,sender, hueMessage, response.current_location).then(() => {
             messenger.send({text: `Okay, ${response.first_name}, turning your lights on.`}, sender);
         });
