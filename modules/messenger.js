@@ -27,7 +27,7 @@ exports.getUserInfo = (userId) => {
 
         request({
             url: `https://graph.facebook.com/v2.6/${userId}`,
-            qs: {fields:"first_name,last_name,profile_pic,current_location", access_token: FB_PAGE_TOKEN},
+            qs: {fields:"first_name,last_name,profile_pic", access_token: FB_PAGE_TOKEN},
             method: 'GET',
         }, (error, response) => {
             if (error) {
