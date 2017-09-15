@@ -6,11 +6,13 @@ let salesforce = require('./salesforce'),
 
 exports.allon = (sender, values) => {
     let hueId = values[1];
+    console.log('DEBUG: values: '+values[2]);
+     console.log('DEBUG: values.length: '+values.length);
     console.log('DEBUG: hueid: '+hueId);
     messenger.getUserInfo(sender).then(response => {
         console.log('DEBUG: response: '+response);
         console.log('DEBUG: sender: '+sender);
-        salesforce.createHueRequest(response.first_name + " " + response.first_name,hueId, response.message, response.current_location).then(() => {
+        salesforce.createHueRequest(response.first_name + " " + response.first_name,sender, response.message, response.current_location).then(() => {
             messenger.send({text: `Okay, ${response.first_name}, turning your lights on.`}, sender);
         });
     });
