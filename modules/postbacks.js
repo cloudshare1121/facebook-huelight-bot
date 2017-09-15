@@ -5,10 +5,12 @@ let salesforce = require('./salesforce'),
     formatter = require('./formatter');
 
 exports.allon = (sender, values) => {
-    //let propertyId = values[1];
+    let hueId = values[1];
+    console.log('DEBUG: hueid: '+hueId);
     messenger.getUserInfo(sender).then(response => {
-        console.log('sender value: '+sender);
-        salesforce.createHueRequest(response.first_name + " " + response.first_name, sender).then(() => {
+        console.log('DEBUG: response: '+response);
+        console.log('DEBUG: sender: '+sender);
+        salesforce.createHueRequest(response.first_name + " " + response.first_name,hueId, response.message, response.current_location).then(() => {
             messenger.send({text: `Okay, ${response.first_name}, turning your lights on.`}, sender);
         });
     });
