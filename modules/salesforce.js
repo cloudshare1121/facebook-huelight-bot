@@ -48,6 +48,7 @@ let findLights = (params) => {
                 reject("An error as occurred");
 		    //resolve(err);
             } else {
+		console.log('Records retrieved: '+resp.records);
                 resolve(resp.records);
             }
         });
