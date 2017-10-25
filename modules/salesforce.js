@@ -38,7 +38,8 @@ let findLights = (params) => {
     return new Promise((resolve, reject) => {
         let q = `SELECT id,
                     title__c,                    
-                    picture__c
+                    picture__c, 
+		    Device_Type__c
                 FROM Hue_Light__c
                 ${where}
                 LIMIT 5`;
