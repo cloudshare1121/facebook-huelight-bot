@@ -49,6 +49,7 @@ exports.home = (sender, values) => {
     let thermoMessage = values[0];
     console.log("thermoMessage home : "+thermoMessage);
     messenger.getUserInfo(sender).then(response => {
+        console.log("response home : "+response);
         salesforce.createThermostatRequest(response.first_name,response.last_name,sender, thermoMessage).then(() => {
             messenger.send({text: `Thanks, ${response.first_name}. Glad you are home`}, sender);
         });
