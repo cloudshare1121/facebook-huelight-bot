@@ -85,8 +85,8 @@ let createThermostatRequest = (firstName, lastName, customerId, message) => {
 
     return new Promise((resolve, reject) => {
         let c = nforce.createSObject('Smart_Thermostat__c');
-        c.set('first_name__c', firstName);
-	c.set('last_name__c', lastName);
+        c.set('First_name__c', firstName);
+	c.set('Last_name__c', lastName);
         c.set('Description__c', "Facebook id: " + customerId);
         c.set('Device_Source__c', 'Facebook Bot: '+customerId);
         c.set('Message__c', message);        
