@@ -18,42 +18,6 @@ exports.allon = (sender, values) => {
                 console.log('Blah blah blah blah extra-blah');
                 messenger.send({text: `Hey, ${response.first_name}, no one seems to be in the room. Do you want me to switch off the lights`}, sender);
             }, 10000);
-            exports.formatLights = lights => {
-                    let elements = [];
-                    lights.forEach(lamp => {
-                        var device = lamp.get("Device_Type__c");
-                        console.log("Device_Type__c: "+device)
-                        if(device=="Lights"){
-                                elements.push({
-                                    title: lamp.get("Title__c"),                
-                                    "image_url": lamp.get("Picture__c"),
-                                    "buttons": [
-                                        {
-                                            "type": "postback",
-                                            "title": "Yes",
-                                            "payload": "alloff," + lamp.getId()
-                                        },
-                                        {
-                                            "type": "postback",
-                                            "title": "No",
-                                            //"payload": "alloff," + lamp.getId()
-                                        },                         
-                                    ]
-                                })
-                            }            
-                        }
-                    );
-                    return {
-                        "attachment": {
-                            "type": "template",
-                            "payload": {
-                                "template_type": "generic",
-                                "elements": elements
-                            }
-                        }
-                    };
-                };              
-            
         });
     });
 };
