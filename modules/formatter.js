@@ -6,6 +6,8 @@ let moment = require("moment"),
 exports.formatLights = lights => {
     let elements = [];
     lights.forEach(lamp => {
+        var device = lamp.get("Device_Type__c");
+        console.log("Device_Type__c: "+device)
             elements.push({
                 title: lamp.get("Title__c"),                
                 "image_url": lamp.get("Picture__c"),
