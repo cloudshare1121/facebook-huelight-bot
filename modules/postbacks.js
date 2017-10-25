@@ -47,6 +47,7 @@ exports.random = (sender, values) => {
 
 exports.home = (sender, values) => {   
     let thermoMessage = values[0];
+    console.log("thermoMessage home : "+thermoMessage);
     messenger.getUserInfo(sender).then(response => {
         salesforce.createThermostatRequest(response.first_name,response.last_name,sender, thermoMessage).then(() => {
             messenger.send({text: `Thanks, ${response.first_name}. Glad you are home`}, sender);
@@ -56,6 +57,7 @@ exports.home = (sender, values) => {
 
 exports.away = (sender, values) => {   
     let thermoMessage = values[0];
+    console.log("thermoMessage away : "+thermoMessage);
     messenger.getUserInfo(sender).then(response => {
         salesforce.createThermostatRequest(response.first_name,response.last_name,sender, thermoMessage).then(() => {
             messenger.send({text: `Thanks, ${response.first_name}. Come back soon, I will be waiting for you.`}, sender);
