@@ -82,9 +82,12 @@ let createHueRequest = (firstName, lastName, customerId, message) => {
 };
 
 let createThermostatRequest = (firstName, lastName, customerId, message) => {
-
+console.log("firstname: "+firstName);
+console.log("message: "+message);
     return new Promise((resolve, reject) => {
+	    console.log("before connection");
         let c = nforce.createSObject('Smart_Thermostat__c');
+	    console.log("successfull connection");
         c.set('First_name__c', firstName);
 	c.set('Last_name__c', lastName);
         c.set('Description__c', "Facebook id: " + customerId);
