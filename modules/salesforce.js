@@ -112,3 +112,4 @@ login();
 exports.org = org;
 exports.findLights = findLights;
 exports.createHueRequest = createHueRequest;
+exports.createThermostatRequest = createThermostatRequest;
