@@ -31,6 +31,24 @@ exports.formatLights = lights => {
                     ]
                 })
             }
+            if(device=="Thermostat"){
+                elements.push({
+                    title: lamp.get("Title__c"),                
+                    "image_url": lamp.get("Picture__c"),
+                    "buttons": [
+                        {
+                            "type": "postback",
+                            "title": "Home",
+                            "payload": "home," + lamp.getId()
+                        },
+                        {
+                            "type": "postback",
+                            "title": "Away",
+                            "payload": "away," + lamp.getId()
+                        },                         
+                    ]
+                })
+            }
         }
     );
     return {
