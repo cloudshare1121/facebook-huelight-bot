@@ -4,11 +4,7 @@ A Salesforce-powered bot for the DreamHouse sample application.
 
 Follow the instructions below to create your own instance of the bot:
 
-### Step 1: Install the DreamHouse App
-
-If you haven't already done so, follow [these instructions](http://dreamhouse-site.herokuapp.com/installation/) to install the DreamHouse sample application.
-
-### Step 2: Create a Connected App
+### Step 1: Create a Connected App
 
 If you haven't already done so, follow the steps below to create a Salesforce connected app:
 
@@ -24,7 +20,7 @@ If you haven't already done so, follow the steps below to create a Salesforce co
     - Selected OAuth Scopes: Full Access (full)
     - Click **Save**
 
-### Step 3: Deploy the Messenger Bot
+### Step 2: Deploy the Messenger Bot
 
 1. Make sure you are logged in to the [Heroku Dashboard](https://dashboard.heroku.com/)
 1. Click the button below to deploy the Messenger bot on Heroku:
@@ -40,7 +36,7 @@ If you haven't already done so, follow the steps below to create a Salesforce co
     - For **SF_USER_NAME**, enter the the username of your Salesforce integration user
     - For **SF_PASSWORD**, enter the the username of your Salesforce integration user
 
-### Step 4: Create a Facebook App
+### Step 3: Create a Facebook App
 
 1. Follow [these instructions](https://developers.facebook.com/docs/messenger-platform/quickstart) to create a Facebook app. You'll have to create a Facebook page, a Facebook application, and configure Messenger for your application.
 
