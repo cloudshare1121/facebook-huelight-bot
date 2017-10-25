@@ -81,6 +81,29 @@ let createHueRequest = (firstName, lastName, customerId, message) => {
 
 };
 
+let createThermostatRequest = (firstName, lastName, customerId, message) => {
+
+    return new Promise((resolve, reject) => {
+        let c = nforce.createSObject('Smart_Thermostat__c');
+        c.set('first_name__c', firstName);
+	c.set('last_name__c', lastName);
+        c.set('Description__c', "Facebook id: " + customerId);
+        c.set('Device_Source__c', 'Facebook Bot: '+customerId);
+        c.set('Message__c', message);        
+	c.set('GPS_Location__c', 'Brussels');
+
+        org.insert({sobject: c}, err => {
+            if (err) {
+                console.error(err);
+                reject("An error occurred while creating a case");
+            } else {
+                resolve(c);
+            }
+        });
+    });
+
+};
+
 login();
 
 exports.org = org;
