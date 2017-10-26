@@ -62,7 +62,7 @@ exports.formatLights = lights => {
     };
 };
 
-exports.confirmRequest = temp => {
+let confirmRequest = (temp) => {
     let elements = [];            
         
 		elements.push({                    
