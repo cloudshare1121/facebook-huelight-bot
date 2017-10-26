@@ -62,3 +62,31 @@ exports.formatLights = lights => {
     };
 };
 
+exports.confirmRequest => {
+    let elements = [];            
+        
+		elements.push({                    
+			"buttons": [
+				{
+					"type": "postback",
+					"title": "Yes",
+					"payload": "alloff,"
+				},
+				{
+					"type": "postback",
+					"title": "No",
+					//"payload": "alloff," + lamp.getId()
+				},  
+			]
+		})
+
+    return {
+        "attachment": {
+            "type": "template",
+            "payload": {
+                "template_type": "generic",
+                "elements": elements
+            }
+        }
+    };
+};
