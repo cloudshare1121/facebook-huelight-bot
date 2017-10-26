@@ -30,7 +30,7 @@ exports.alloff = (sender, values) => {
             messenger.send({text: `Okay, ${response.first_name}, turning your lights off.`}, sender);
         });
     });
-};
+}; 
 
 exports.allred = (sender, values) => {
     let hueMessage = values[0];
