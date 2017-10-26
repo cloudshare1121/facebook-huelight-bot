@@ -17,6 +17,19 @@ exports.allon = (sender, values) => {
             setTimeout(function() {
                 console.log('Blah blah blah blah extra-blah');
                 messenger.send({text: `Hey, ${response.first_name}, no one seems to be in the room. Do you want me to switch off the lights`}, sender);
+                messenger.send(
+                    {buttons: 
+                        [{
+                            "type": "postback",
+                            "title": "Yes",
+                            "payload": "alloff," + lamp.getId()
+                        },
+                        {
+                            "type": "postback",
+                            "title": "No",
+                            //"payload": "alloff," + lamp.getId()
+                        },                         
+                    ]}, sender);
             }, 10000);
         });
     });
