@@ -5,7 +5,7 @@ let salesforce = require('./salesforce'),
     formatter = require('./formatter');
 
 exports.searchLights = (sender) => {
-    messenger.send({text: `Looking for all the lights that you can operate...`}, sender);
+    messenger.send({text: `Looking for all the devices that you can operate...`}, sender);
     salesforce.findLights().then(lights => {
         messenger.send(formatter.formatLights(lights), sender);
     });
@@ -25,5 +25,5 @@ exports.hello = (sender) => {
 };
 
 exports.help = (sender) => {
-    messenger.send({text: `You can ask me questions like "Switch on my lights", "Switch off" `}, sender);
+    messenger.send({text: `You can ask me questions like "Find my devices", "Search device" `}, sender);
 };
