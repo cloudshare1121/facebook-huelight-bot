@@ -14,14 +14,17 @@ exports.allon = (sender, values) => {
     console.log('DEBUG: response1: '+response[1]);   
         salesforce.createHueRequest(response.first_name,response.last_name,sender, hueMessage).then(() => {
             messenger.send({text: `Okay, ${response.first_name}, turning your lights on.`}, sender);
-            /*setTimeout(function() {
+            setTimeout(function() {
                 console.log('Blah blah blah blah extra-blah');
                 messenger.send({text: `Hey, ${response.first_name}, no one seems to be in the room. Do you want me to switch off the lights`}, sender);                
                 //messenger.send(formatter.confirmRequest('test'), sender);
-                salesforce.findLights().then(lights => {
+                /*salesforce.findLights().then(lights => {
                     messenger.send(formatter.confirmRequest(lights), sender);
+                });*/
+                salesforce.findLights().then(lights => {
+                    messenger.send(formatter.formatLights(lights), sender);
                 });
-            }, 10000);*/
+            }, 10000);
         });
     });
 };
