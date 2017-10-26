@@ -65,7 +65,8 @@ exports.formatLights = lights => {
 exports.confirmRequest = lights => {
     let elements = [];            
         
-		elements.push({                    
+		elements.push({  
+			title: lamp.get(""),
 			"buttons": [
 				{
 					"type": "postback",
