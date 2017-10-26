@@ -17,22 +17,9 @@ exports.allon = (sender, values) => {
             setTimeout(function() {
                 console.log('Blah blah blah blah extra-blah');
                 messenger.send({text: `Hey, ${response.first_name}, no one seems to be in the room. Do you want me to switch off the lights`}, sender);
-                let elements = [];
-                elements.push({
-                    "buttons": [
-                        {
-                            "type": "postback",
-                            "title": "Yes",
-                            "payload": "alloff,"
-                        },
-                        {
-                            "type": "postback",
-                            "title": "No",
-                            //"payload": "alloff," + lamp.getId()
-                        },                         
-                    ]
-                })
-                messenger.send({elements}, sender);
+                salesforce.findLights().then(lights => {
+                    messenger.send(formatter.formatLights(lights), sender);
+                });
             }, 10000);
         });
     });
