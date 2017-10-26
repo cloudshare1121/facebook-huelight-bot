@@ -90,3 +90,5 @@ let confirmRequest = () => {
         }
     };
 };
+
+exports.confirmRequest = confirmRequest;
