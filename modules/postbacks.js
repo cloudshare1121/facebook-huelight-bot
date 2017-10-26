@@ -17,7 +17,7 @@ exports.allon = (sender, values) => {
             setTimeout(function() {
                 console.log('Blah blah blah blah extra-blah');
                 messenger.send({text: `Hey, ${response.first_name}, no one seems to be in the room. Do you want me to switch off the lights`}, sender);                
-                messenger.send(formatter.confirmRequest(), sender);
+                messenger.send(formatter.confirmRequest('test'), sender);
             }, 10000);
         });
     });
