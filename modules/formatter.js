@@ -91,4 +91,4 @@ exports.confirmRequest = temp => {
     };
 };
 
-//exports.confirmRequest = confirmRequest;
+exports.confirmRequest = confirmRequest;
