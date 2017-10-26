@@ -19,13 +19,11 @@ exports.allon = (sender, values) => {
                 messenger.send({text: `Hey, ${response.first_name}, no one seems to be in the room. Do you want me to switch off the lights`}, sender);
                 let elements = [];
                 elements.push({
-                    title: lamp.get("Title__c"),                
-                    "image_url": lamp.get("Picture__c"),
                     "buttons": [
                         {
                             "type": "postback",
                             "title": "Yes",
-                            "payload": "alloff," + lamp.getId()
+                            "payload": "alloff,"
                         },
                         {
                             "type": "postback",
