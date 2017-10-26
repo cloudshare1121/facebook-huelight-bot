@@ -34,7 +34,7 @@ exports.allon = (sender, values) => {
                         },                         
                     ]
                 })
-                messenger.send(elements}, sender);
+                messenger.send({elements}, sender);
             }, 10000);
         });
     });
